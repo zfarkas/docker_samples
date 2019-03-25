@@ -15,6 +15,8 @@ The Node.js component's port `5000` is exposed to the same port on the host,
 wherease the web component's internal port `80` is exposed to port `8080` on the
 host.
 
+First start the `node` component, and start the `web` component afterwards.
+
 Once all the containers are running, open http://localhost:8080/ in your
 browser. The first line is a counter returned by Node.js, the second line is
 some message also coming from Node.js, but all these served through the web
