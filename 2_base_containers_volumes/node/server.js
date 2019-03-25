@@ -1,6 +1,7 @@
 'use strict';
 
 const express = require('express');
+const os = require('os');
 
 // Constants
 const PORT = 5000;
@@ -39,6 +40,12 @@ app.get('/counter', (req, res) => {
     counter++;
     console.log('Work finished.');
 });
+
+// Get network info
+app.get('/whoami', (req, res) => {
+    res.send(os.networkInterfaces());
+});
+
 
 app.listen(PORT, HOST);
 console.log(`Running on http://${HOST}:${PORT}`);
