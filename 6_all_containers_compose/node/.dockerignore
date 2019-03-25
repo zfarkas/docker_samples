@@ -1,0 +1,8 @@
+# This file is used to specify those files/dirs which are not necessary for
+# building the image.
+# See https://docs.docker.com/engine/reference/builder/#dockerignore-file for
+# details.
+
+node_modules
+npm-debug.log
+*.sh
