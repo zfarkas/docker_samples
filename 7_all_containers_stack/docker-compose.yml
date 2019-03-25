@@ -1,0 +1,32 @@
+version: '3'
+services:
+    zip2000_db:
+        image: zip2000_db:latest
+        hostname: zip2000_db
+        ports:
+            - "3306:3306"
+        environment:
+            MYSQL_ROOT_PASSWORD: pass
+            MYSQL_DATABASE: zip2000_app
+            MYSQL_USER: zip2000_user
+            MYSQL_PASSWORD: zip2000_pass
+        # Not necessary, we already have the init SQL in the image
+        #volumes:
+        #    - ./db/init_db.sql:/docker-entrypoint-initdb.d/init_db.sql
+    zip2000_node:
+        image: zip2000_node:latest
+        hostname: zip2000_node
+        ports:
+            - "5000:5000"
+        deploy:
+            replicas: 4
+        depends_on:
+            - zip2000_db
+    zip2000_web:
+        image: zip2000_web:latest
+        hostname: zip20000_web
+        ports:
+            - "8080:80"
+        depends_on:
+            - zip2000_node
+            - zip2000_db
