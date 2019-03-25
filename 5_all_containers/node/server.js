@@ -69,11 +69,13 @@ app.get('/counter', (req, res) => {
 
 // Get network info
 app.get('/whoami', (req, res) => {
+    console.log('Accessed endpoint /whoami');
     res.send(os.networkInterfaces());
 });
 
 // Get last 10 messages from the DB
 app.get('/messages', (req, res) => {
+    console.log('Accessed endpoint /messages');
     var sql = 'select * from messages order by ts desc limit 10;'
     con.query(sql, function (err, result, fields) {
         if (err) {
