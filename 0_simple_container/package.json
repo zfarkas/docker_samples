@@ -1,0 +1,19 @@
+{
+  "name": "node_sample",
+  "version": "1.0.0",
+  "description": "Node.js example",
+  "author": "FARKAS Zoltán <zfarkas@zfarkas.hu>",
+  "license" : "Apache-2.0",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/zfarkas/docker_samples.git",
+    "directory": "0_simple_container"
+  },
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.16.1"
+  }
+}
