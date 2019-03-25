@@ -12,7 +12,7 @@ There are a number of shell scripts in this example, which help to get started
 and try out the example easily and quickly:
 
 - `01_build.sh`: can be used to build the Docker image. The image will be called
-`zip2000_simple_container`.
+`zip2000_simple_container`
 - `02_create_network.sh`: can be used to create a dedicated network for the
 container. The network is called `simple_network`
 - `03_run.sh`: can be used to start a container from the image build inside the
