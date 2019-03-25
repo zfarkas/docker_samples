@@ -22,3 +22,15 @@ Node.js app running inside the container
 - `04_access_from_container.sh`: a test to check access to the Node.js app from
 an other container
 - `05_remove_network.sh`: script to remove the network if not needed anymore.
+
+# Files in the directory
+
+- `server.js`, `package.json`, `package-lock.json`: part of the Node.js app
+- `Dockerfile`: describes the image build process. See the [Dockerfile
+reference](https://docs.docker.com/engine/reference/builder/) for details
+- `.dockerignore`: when building the image, Docker copies the content of the
+current directory as context inside the build environment. This file can be used
+to specify which files/directories are not needed. For example in case of this
+app, the `node_modules` directory is not needed (as we perform an `npm install`
+during the build process), so this directory is specified in the `.dockerignore`
+file.
