@@ -14,7 +14,7 @@ run this command:
 $ docker-compose up --build
 ```
 
-This will starts the containers as described in the YAML file
+This will start the containers as described in the YAML file
 `docker-compose.yml`, and you'll be able to see their output as well.
 
 In order to detach, please execute:
