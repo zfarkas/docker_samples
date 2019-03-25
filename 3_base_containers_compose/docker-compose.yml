@@ -1,0 +1,28 @@
+version: '3'
+services:
+    node:
+        build: ./node
+        # Instead of build, we can also use an existing image
+        #image: zip2000_node
+        container_name: zip2000_node
+        hostname: zip2000_node
+        # Not necessary to publish the ports, if only 'web' will access the
+        # 'node' component. Uncomment the lines below if you want to access the
+        # 'node' component from the Docker host as well.
+        #ports:
+        #    - "5000:5000"
+    web:
+        build: ./web
+        container_name: zip2000_web
+        hostname: zip2000_web
+        ports:
+            - "8080:80"
+        links:
+            - node
+        depends_on:
+            - node
+        # We can attach volumes as well. Uncomment the one below to enable
+        # convenient development of the 'web' component while its container is
+        # running
+        #volumes:
+        #    - ./web/src:/var/www/html
