@@ -1,0 +1,16 @@
+version: '3'
+services:
+    zip2000_node:
+        image: zip2000_node:latest
+        hostname: zip2000_node
+        ports:
+            - "5000:5000"
+        deploy:
+            replicas: 5
+    zip2000_web:
+        image: zip2000_web:latest
+        hostname: zip2000_web
+        ports:
+            - "8080:80"
+        depends_on:
+            - node
