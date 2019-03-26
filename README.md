@@ -3,7 +3,7 @@
 A step-by-step tutorial for creating containerized version of a multi-layer
 software stack, consisting of a database (MariaDB), Node.js and Apache/PHP.
 
-# Preprequisites
+# Prerequisites
 
 - [Docker CE](https://docs.docker.com/install/)
 - [Docker Compose](https://docs.docker.com/compose/install/)
