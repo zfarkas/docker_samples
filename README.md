@@ -18,3 +18,4 @@ software stack, consisting of a database (MariaDB), Node.js and Apache/PHP.
 - [All three components containerized](5_all_containers)
 - [Compose for all containers](6_all_containers_compose)
 - [Stack for every container](7_all_containers_stack)
+- [Complete compose with environment variables](8_all_containers_compose_envs)

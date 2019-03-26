@@ -1,0 +1,48 @@
+version: '3'
+services:
+    db:
+        build:
+            context: ./db
+            args:
+                MYSQL_DATABASE: ${MYSQL_DATABASE}
+        container_name: zip2000_db
+        hostname: zip2000_db
+        environment:
+            MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+            MYSQL_DATABASE: ${MYSQL_DATABASE}
+            MYSQL_USER: ${MYSQL_USER}
+            MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    node:
+        build: ./node
+        container_name: zip2000_node
+        hostname: zip2000_node
+        environment:
+            MYSQL_DATABASE: ${MYSQL_DATABASE}
+            MYSQL_USER: ${MYSQL_USER}
+            MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+            NODE_PORT: ${NODE_PORT}
+        ports:
+            - "${NODE_PORT}:${NODE_PORT}"
+        links:
+            - db
+        depends_on:
+            - db
+    web:
+        build: ./web
+        container_name: zip2000_web
+        hostname: zip2000_web
+        environment:
+            MYSQL_DATABASE: ${MYSQL_DATABASE}
+            MYSQL_USER: ${MYSQL_USER}
+            MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+            NODE_PORT: ${NODE_PORT}
+        ports:
+            - "8080:80"
+        links:
+            - node
+            - db
+        depends_on:
+            - node
+            - db
+        volumes:
+            - ./web/src:/var/www/html
