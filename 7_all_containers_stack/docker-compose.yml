@@ -3,6 +3,8 @@ services:
     zip2000_db:
         image: zip2000_db:latest
         hostname: zip2000_db
+        # If we do not want to connect to the MySQL service from the host,
+        # the 'ports' part can be commented out
         ports:
             - "3306:3306"
         environment:
