@@ -3,7 +3,7 @@
 This example contains a two-layer application built with Docker Compose. The big
 advantage of Compose when compared to setting up components individually is that
 instead of starting multiple containers one after the other, a single command
-can be used to bring up a complex architecture. One simpe YAML file can be used
+can be used to bring up a complex architecture. One simple YAML file can be used
 to set up all the properties of the individual containers.
 
 # Usage
@@ -23,7 +23,7 @@ $ docker-compose up --build --detach
 ```
 
 Once finished, you can use `CTRL+c` to stop the containers. Finally, to clean up
-(and the stop everyting in detached mode) execute the following command:
+(and the stop everything in detached mode) execute the following command:
 ```
 $ docker-compose down
 ```

@@ -12,7 +12,7 @@ run the containers, additionally, the `node` directory contains scripts for
 managing the network for this example.
 
 The Node.js component's port `5000` is exposed to the same port on the host,
-wherease the web component's internal port `80` is exposed to port `8080` on the
+whereas the web component's internal port `80` is exposed to port `8080` on the
 host.
 
 First start the `node` component, and start the `web` component afterwards.

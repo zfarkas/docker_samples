@@ -85,7 +85,7 @@ $ docker stack rm zip2000_stack
 - It might happen that ports to be published are not published. In this case
 either the Docker service on the host must be restarted (know bug), or one has
 to inspect the stack's network (`docker network inspect <network-name>`), and
-connect to the netowk peer's IP address.
+connect to the network peer's IP address.
 
 - Stacks, as opposed to Compose, cannot build images, so the YAML file must
-reference an image available locally or fetchable from the image registry.
+reference an image available locally or downloadable from the image registry.
