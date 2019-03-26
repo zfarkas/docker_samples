@@ -36,5 +36,5 @@ file, thus other components won't be able to access the instances of the given
 component. In this case additional components must be added to the architecture,
 as described in [this Medium.com article](https://medium.com/@benoittellier3/automatic-load-balancing-for-your-docker-compose-services-aa6b96f20d20).
 
-- Docker Compose automatically creates a network for the containers is no network
+- Docker Compose automatically creates a network for the containers if no network
 is specified in `docker-compose.yml`.

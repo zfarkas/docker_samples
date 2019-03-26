@@ -36,7 +36,7 @@ The different components read the values from environment variables. For
 example, the `node` component has the following environment variables defined
 in `docker-compose.yml`:
 ```
-...
+        ...
         environment:
             MYSQL_DATABASE: ${MYSQL_DATABASE}
             MYSQL_USER: ${MYSQL_USER}
