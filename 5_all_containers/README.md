@@ -22,12 +22,13 @@ ID field, a text field for the message text, and a timestamp field.
 
 ## Database
 
-The `db` component represents a MariaDB service, built on top of the [official
-MariaDB image](https://hub.docker.com/_/mariadb) from the Docker Hub. This image
-is prepared in a way which makes initialization the database very simple:
-environment variables can be used to have database user accounts set up, and
-database initialization is also possible through SQL scripts, or shell scripts.
-Please see the description of this base image at the link above for details.
+The `db` component represents a MariaDB service, built on top of the
+[official MariaDB image](https://hub.docker.com/_/mariadb) from the Docker Hub.
+This image is prepared in a way which makes initialization the database very
+simple: environment variables can be used to have database user accounts set up,
+and database initialization is also possible through SQL scripts, or shell
+scripts. Please see the description of this base image at the link above for
+details.
 
 ## Node
 
