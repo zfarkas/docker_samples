@@ -17,16 +17,18 @@ $ docker-compose up --build
 This will start the containers as described in the YAML file
 `docker-compose.yml`, and you'll be able to see their output as well.
 
-In order to detach, please execute:
+In order to start the architecture in detached mode (background), please
+execute:
 ```
 $ docker-compose up --build --detach
 ```
 
 Once finished, you can use `CTRL+c` to stop the containers. Finally, to clean up
-(and the stop everything in detached mode) execute the following command:
+(and stop everything in detached mode), execute the following command:
 ```
 $ docker-compose down
 ```
+This will remove the stopped containers and the network created as well.
 
 # Notes
 
@@ -38,3 +40,8 @@ as described in [this Medium.com article](https://medium.com/@benoittellier3/aut
 
 - Docker Compose automatically creates a network for the containers if no network
 is specified in `docker-compose.yml`.
+
+- In this example the `node` component's listening port (5000) is not published,
+meaning only other containers being part of the network created by compose can
+access the exposed port. It is not possible to connect to the `node` component
+from the Docker host.

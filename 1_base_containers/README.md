@@ -4,6 +4,12 @@ This directory contains two components: a Node.js component and a web component
 (Apache + PHP). The web component gets some info from the Node.js component, and
 displays it for the user.
 
+If you compare the `Dockerfile` for the `node` component in this example with
+the `Dockerfile` in the [Create a simple container](../0_simple_container)
+example, you can see that this example doesn't use the `ubuntu` image as the
+base, but the `node:lts` base. This base image already has Node.js installed
+(thus there is no need to install it in the `Dockerfile` with `apt`).
+
 # Usage
 
 The `node` and `web` directories are built similarly to the [Create a simple
